@@ -18,7 +18,7 @@ plot2 <- NEI[NEI$fips == "24510",] %>% group_by(year) %>% summarise(total = sum(
 png("plot2.png", width=480, height=480)
 
 ## plot using base plotting system in R
-p2 <- with(plot2, barplot(total, xlab="Year", names.arg=c("1999", "2002", "2005", "2008"), ylab="Total PM2.5 emissions (tons)", main="Total PM2.5 emissions for Baltimore City, Maryland"))
+p2 <- barplot(plot2$total, xlab="Year", names.arg=c("1999", "2002", "2005", "2008"), ylab="Total PM2.5 emissions (tons)", main="Total PM2.5 emissions for Baltimore City, Maryland"))
 
 ## Print plot
 print(p2)

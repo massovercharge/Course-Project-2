@@ -23,7 +23,7 @@ plot1 <- NEI %>% select(year, type, Emissions) %>% group_by(year) %>% summarise(
 png("plot1.png", width=480, height=480)
 
 ## plot using base plotting system in R
-p1 <- with(plot1, barplot(total, names.arg=c("1999", "2002", "2005", "2008"), xlab="Year", ylab="Total PM2.5 emissions (tons)", main="Total PM2.5 emissions in the US"))
+p1 <- barplot(plot1$total, names.arg=c("1999", "2002", "2005", "2008"), xlab="Year", ylab="Total PM2.5 emissions (tons)", main="Total PM2.5 emissions in the US"))
 
 ## Print plot
 print(p1)
